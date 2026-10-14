@@ -71,6 +71,7 @@ import { NotificationDrawer } from './components/modals/NotificationDrawer';
 import { KedaiQuView } from './components/kedai/KedaiQuView';
 import { KlinikQuView } from './components/klinik/KlinikQuView';
 import { RitelQuView } from './components/ritel/RitelQuView';
+import { TitipQuView } from './components/titip/TitipQuView';
 import { MasterSwitcherModal, EcosystemId } from './components/common/MasterSwitcherModal';
 import { EcosystemPreviewView } from './components/views/EcosystemPreviewView';
 
@@ -1027,7 +1028,30 @@ export default function App() {
     );
   }
 
-  // Modul Ekosistem Lainnya (TitipQu)
+  // UsahaQu Master Ecosystem Routing: Tampilkan TitipQu / CollabQu jika dipilih
+  if (activeEcosystem === 'titip') {
+    return (
+      <AndroidFrame
+        onHomePress={handleGoHome}
+        onBackPress={() => setActiveEcosystem('bengkel')}
+        canGoBack={false}
+      >
+        <TitipQuView
+          onBackToBengkel={() => setActiveEcosystem('bengkel')}
+          onOpenMasterSwitcher={() => setIsMasterSwitcherOpen(true)}
+        />
+
+        <MasterSwitcherModal
+          isOpen={isMasterSwitcherOpen}
+          onClose={() => setIsMasterSwitcherOpen(false)}
+          activeEcosystem={activeEcosystem}
+          onSelectEcosystem={(eco) => setActiveEcosystem(eco)}
+        />
+      </AndroidFrame>
+    );
+  }
+
+  // Modul Ekosistem Lainnya Fallback
   if (activeEcosystem !== 'bengkel') {
     return (
       <AndroidFrame

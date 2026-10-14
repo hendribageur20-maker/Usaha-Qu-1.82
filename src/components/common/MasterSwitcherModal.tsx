@@ -89,16 +89,16 @@ export const ECOSYSTEM_MODULES: EcosystemModule[] = [
   },
   {
     id: 'titip',
-    name: 'TitipQu',
-    tagline: 'Jasa Titip & Ekspedisi Paket',
-    category: 'Logistik & Jastip',
+    name: 'TitipQu / CollabQu',
+    tagline: 'Konsinyasi, Reseller & Produksi',
+    category: 'Konsinyasi & Maklon UMKM',
     layoutType: 'Navbar Layout',
-    primaryColor: '#0f766e',
-    accentBg: 'bg-cyan-50 border-cyan-200 text-cyan-900',
+    primaryColor: '#C2410C',
+    accentBg: 'bg-amber-50 border-amber-200 text-amber-950',
     icon: Package,
     faIcon: 'fa-boxes-packing',
-    description: 'Manajemen resi, barcode tracking penerimaan, manifest kurir & notifikasi WhatsApp.',
-    badge: 'Tersedia',
+    description: 'Hitung HPP bahan & upah borongan, bagi hasil toko titipan, surat jalan & reseller tiering.',
+    badge: 'Fitur Baru',
     isReady: true
   }
 ];
@@ -181,7 +181,7 @@ export const MasterSwitcherModal: React.FC<MasterSwitcherModalProps> = ({
                     item.id === 'bengkel' ? 'bg-[#008952]' :
                     item.id === 'kedai' ? 'bg-emerald-700' :
                     item.id === 'klinik' ? 'bg-teal-700' :
-                    item.id === 'ritel' ? 'bg-[#1E3A8A]' : 'bg-cyan-700'
+                    item.id === 'ritel' ? 'bg-[#1E3A8A]' : 'bg-[#C2410C]'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
